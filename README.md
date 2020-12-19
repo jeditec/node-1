@@ -1,5 +1,16 @@
 # node-1
 
+The purpose of this project is to allow access to your servers hosted in your home/office when you dont have a public IP.
+
+Requirements:
+- Domain name
+- Google cloud linux instance to install VPN server, HAPROXY and NGINX (I use cheapest one around 5 dlls a month), this will be called node-1
+- Local home/office linux server or container to handle requests to HAPROXY and NGINX I use one with dual NIC one for VPN and one for local traffic.
+- Separate router/server/container with DNSMASQ installed to provide DHCP assgnment and domain resolution (This will allow to resolve internal requests from node-2)
+- A configured VPN, I use wireguard as it is the easiest to install server in node-1 client in node-2.
+
+With this project node-1 and node-2 you can achieve the connection and be able to access all your resources from outside.
+
 Below is the general infraestructure diagram.
 
 ![image](https://user-images.githubusercontent.com/76201917/102675558-7e347e00-415f-11eb-9aae-72472e43916a.png)
